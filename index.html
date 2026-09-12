@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Dulce Arte - Panadería, pastelería y productos artesanales hechos con mucho amor."
+    >
+
+    <title>Dulce Arte | Panadería y Pastelería</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         TAILWIND CSS
+    ====================================================== -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        crema: "#FFF8F0",
+                        chocolate: "#51352B",
+                        caramelo: "#B9784B",
+                        dorado: "#DFAF45",
+                        rosa: "#E9A1AB",
+                        rosadoClaro: "#F8E1E4"
+
+                    },
+
+                    fontFamily: {
+
+                        sans: ["DM Sans", "sans-serif"],
+
+                        display: ["Playfair Display", "serif"]
+
+                    }
+
+                }
+
+            }
+
+        };
+    </script>
+
+
+    <!-- =====================================================
+         CSS PERSONALIZADO
+    ====================================================== -->
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body class="bg-crema text-chocolate">
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header
+        id="navbar"
+        class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-chocolate/10"
+    >
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+            <div class="h-20 flex items-center justify-between">
+
+
+                <!-- LOGO -->
+
+                <a
+                    href="#inicio"
+                    class="font-display text-2xl md:text-3xl font-bold"
+                >
+
+                    Dulce
+                    <span class="text-rosa">
+                        Arte
+                    </span>
+
+                </a>
+
+
+                <!-- MENU -->
+
+                <nav class="hidden md:flex items-center gap-8">
+
+                    <a
+                        href="#inicio"
+                        class="nav-link"
+                    >
+                        Inicio
+                    </a>
+
+                    <a
+                        href="#menu"
+                        class="nav-link"
+                    >
+                        Menú
+                    </a>
+
+                    <a
+                        href="#proximamente"
+                        class="nav-link"
+                    >
+                        Próximamente
+                    </a>
+
+                    <a
+                        href="#pedido"
+                        class="nav-link"
+                    >
+                        Mi pedido
+                    </a>
+
+                </nav>
+
+
+                <!-- CARRITO -->
+
+                <button
+                    type="button"
+                    onclick="scrollToPedido()"
+                    class="cart-button"
+                >
+
+                    <span>
+                        🛒
+                    </span>
+
+                    <span class="hidden sm:inline">
+                        Mi pedido
+                    </span>
+
+                    <span
+                        id="cartCount"
+                        class="cart-count"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section
+            id="inicio"
+            class="hero-section"
+        >
+
+            <!-- Decoraciones -->
+
+            <div class="hero-decoration hero-decoration-one"></div>
+
+            <div class="hero-decoration hero-decoration-two"></div>
+
+
+            <div
+                class="max-w-7xl mx-auto px-5 lg:px-8 relative z-10"
+            >
+
+                <div
+                    class="grid lg:grid-cols-2 gap-12 items-center min-h-[85vh] pt-24"
+                >
+
+
+                    <!-- TEXTO -->
+
+                    <div>
+
+                        <span class="hero-badge">
+
+                            ✨ Panadería y Pastelería Artesanal
+
+                        </span>
+
+
+                        <h1 class="hero-title">
+
+                            Delicias hechas
+
+                            <span>
+                                con mucho amor
+                            </span>
+
+                        </h1>
+
+
+                        <p class="hero-description">
+
+                            Sabores caseros, ingredientes seleccionados
+                            y ese toque especial que convierte cada bocado
+                            en un momento delicioso.
+
+                        </p>
+
+
+                        <div class="flex flex-col sm:flex-row gap-4 mt-8">
+
+                            <a
+                                href="#menu"
+                                class="btn-primary"
+                            >
+
+                                Ver Menú
+
+                                <span>
+                                    →
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                href="#pedido"
+                                class="btn-secondary"
+                            >
+
+                                Hacer mi pedido
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="hero-features">
+
+                            <span>
+                                ✓ Preparación artesanal
+                            </span>
+
+                            <span>
+                                ✓ Ingredientes seleccionados
+                            </span>
+
+                            <span>
+                                ✓ Mucho amor en cada pedido
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- IMAGEN DESTACADA -->
+
+                    <div class="hero-image-wrapper">
+
+                        <div class="hero-image">
+
+                            <img
+                                src="images/principal.jpeg"
+                                alt="Queque de banano con chispas de chocolate y pasas"
+                            >
+
+                        </div>
+
+
+                        <div class="hero-floating-card">
+
+                            <span class="text-3xl">
+                                ❤️
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Hecho con amor
+                                </strong>
+
+                                <p>
+                                    Dulce Arte
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MENU
+        ====================================================== -->
+
+        <section
+            id="menu"
+            class="py-24 bg-white"
+        >
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+
+                <!-- TITULO -->
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Nuestro menú
+                    </span>
+
+                    <h2 class="section-title">
+                        Delicias disponibles
+                    </h2>
+
+                    <p class="section-description">
+
+                        Elige tus productos favoritos,
+                        agrégalos a tu pedido y envíanoslo
+                        directamente por WhatsApp.
+
+                    </p>
+
+                </div>
+
+
+                <!-- PRODUCTOS -->
+
+                <div
+                    id="productsGrid"
+                    class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7"
+                >
+
+                    <!-- Los productos serán generados por JavaScript -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PRÓXIMAMENTE
+        ====================================================== -->
+
+        <section
+            id="proximamente"
+            class="py-24 coming-section"
+        >
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            Muy pronto ✨
+                        </span>
+
+                        <h2 class="section-title">
+
+                            Nuevas delicias
+                            están por llegar
+
+                        </h2>
+
+
+                        <p class="section-description">
+
+                            Estamos preparando nuevas recetas y sabores
+                            para seguir sorprendiendo a nuestros clientes.
+
+                        </p>
+
+
+                        <div class="mt-8">
+
+                            <div class="coming-message">
+
+                                👀
+
+                                <span>
+                                    Mantente pendiente de nuestros próximos lanzamientos.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+
+
+                        <article class="coming-card">
+
+                            <div class="coming-placeholder">
+
+                                🍰
+
+                            </div>
+
+                            <div class="p-5">
+
+                                <span class="coming-badge">
+                                    Próximamente
+                                </span>
+
+                                <h3 class="coming-title">
+                                    Nueva creación dulce
+                                </h3>
+
+                                <p class="coming-description">
+                                    Una sorpresa deliciosa está en preparación.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+
+
+                        <article class="coming-card">
+
+                            <div class="coming-placeholder">
+
+                                🥐
+
+                            </div>
+
+                            <div class="p-5">
+
+                                <span class="coming-badge">
+                                    Edición especial
+                                </span>
+
+                                <h3 class="coming-title">
+                                    Producto de temporada
+                                </h3>
+
+                                <p class="coming-description">
+                                    Muy pronto podrás descubrirlo.
+                                </p>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             PEDIDO
+        ====================================================== -->
+
+        <section
+            id="pedido"
+            class="py-24"
+        >
+
+            <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+
+                <div class="section-header">
+
+                    <span class="section-label">
+                        Tu pedido
+                    </span>
+
+                    <h2 class="section-title">
+                        Completa tu pedido
+                    </h2>
+
+                    <p class="section-description">
+
+                        Revisa tus productos, completa tus datos
+                        y envíanos el pedido directamente por WhatsApp.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="grid lg:grid-cols-5 gap-8">
+
+
+                    <!-- =================================================
+                         CARRITO
+                    ================================================== -->
+
+                    <div
+                        class="lg:col-span-3 bg-white rounded-3xl shadow-soft p-6 lg:p-8"
+                    >
+
+                        <div class="flex justify-between items-center mb-6">
+
+                            <div>
+
+                                <h3 class="font-display text-2xl font-bold">
+                                    Resumen del pedido
+                                </h3>
+
+                                <p class="text-sm text-gray-500 mt-1">
+                                    Productos seleccionados
+                                </p>
+
+                            </div>
+
+
+                            <button
+                                id="clearCartButton"
+                                type="button"
+                                onclick="clearCart()"
+                                class="clear-button"
+                            >
+                                Vaciar
+                            </button>
+
+                        </div>
+
+
+                        <div id="cartItems">
+
+                            <div
+                                id="emptyCart"
+                                class="empty-cart"
+                            >
+
+                                <span class="text-5xl">
+                                    🛍️
+                                </span>
+
+                                <h4 class="font-bold mt-4">
+                                    Tu pedido está vacío
+                                </h4>
+
+                                <p class="text-sm text-gray-500 mt-1">
+                                    Selecciona algún producto del menú.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cart-total">
+
+                            <span>
+                                Total estimado
+                            </span>
+
+                            <strong id="cartTotal">
+                                ₡0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         FORMULARIO
+                    ================================================== -->
+
+                    <div
+                        class="lg:col-span-2 order-form-card"
+                    >
+
+                        <h3 class="font-display text-3xl font-bold">
+                            Datos del pedido
+                        </h3>
+
+                        <p class="text-white/60 text-sm mt-2 mb-7">
+
+                            Completa la información para preparar
+                            tu mensaje de WhatsApp.
+
+                        </p>
+
+
+                        <form id="orderForm">
+
+
+                            <!-- NOMBRE -->
+
+                            <div class="form-group">
+
+                                <label for="customerName">
+                                    Nombre
+                                </label>
+
+                                <input
+                                    id="customerName"
+                                    type="text"
+                                    placeholder="Tu nombre"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- TELEFONO -->
+
+                            <div class="form-group">
+
+                                <label for="customerPhone">
+                                    Teléfono
+                                </label>
+
+                                <input
+                                    id="customerPhone"
+                                    type="tel"
+                                    placeholder="Ej. 8888-8888"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- FECHA -->
+
+                            <div class="form-group">
+
+                                <label for="deliveryDate">
+                                    Fecha deseada de entrega
+                                </label>
+
+                                <input
+                                    id="deliveryDate"
+                                    type="date"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- NOTAS -->
+
+                            <div class="form-group">
+
+                                <label for="orderNotes">
+                                    Notas especiales
+                                </label>
+
+                                <textarea
+                                    id="orderNotes"
+                                    rows="4"
+                                    placeholder="Ej. Es para cumpleaños..."
+                                ></textarea>
+
+                            </div>
+
+
+
+                            <!-- BOTON -->
+
+                            <button
+                                type="submit"
+                                class="whatsapp-button"
+                            >
+
+                                <span class="text-xl">
+                                    💬
+                                </span>
+
+                                Enviar pedido por WhatsApp
+
+                            </button>
+
+
+                            <p class="text-xs text-white/40 text-center mt-4">
+
+                                WhatsApp se abrirá con tu pedido
+                                listo para enviar.
+
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="max-w-7xl mx-auto px-5 lg:px-8">
+
+
+            <div class="grid md:grid-cols-3 gap-10">
+
+
+                <div>
+
+                    <h3 class="font-display text-3xl font-bold">
+
+                        Dulce
+                        <span class="text-rosa">
+                            Arte
+                        </span>
+
+                    </h3>
+
+                    <p class="text-white/60 mt-4 max-w-sm">
+
+                        Panadería y pastelería artesanal,
+                        preparada con ingredientes seleccionados
+                        y mucho amor.
+
+                    </p>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4 class="font-bold text-lg mb-4">
+                        Navegación
+                    </h4>
+
+                    <div class="space-y-3 text-white/60">
+
+                        <a href="#inicio" class="footer-link">
+                            Inicio
+                        </a>
+
+                        <a href="#menu" class="footer-link">
+                            Menú
+                        </a>
+
+                        <a href="#proximamente" class="footer-link">
+                            Próximamente
+                        </a>
+
+                        <a href="#pedido" class="footer-link">
+                            Mi pedido
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <h4 class="font-bold text-lg mb-4">
+                        Pedidos
+                    </h4>
+
+                    <p class="text-white/60">
+                        WhatsApp
+                    </p>
+
+                    <p class="text-white text-xl font-bold mt-2">
+                        8606-5264
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                © 2026 Dulce Arte.
+                Todos los derechos reservados.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
